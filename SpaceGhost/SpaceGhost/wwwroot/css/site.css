@@ -1,0 +1,181 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-size: cover;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 50%; /* Center the navbar horizontally */
+    transform: translateX(-50%); /* Adjust position after centering */
+    z-index: 1000;
+    box-sizing: border-box; /* Add this to include padding and border in width calculation */
+    border: 3px solid #ffb8fb;
+    transition: ease-in-out 0.5s;
+    box-shadow: -10px 10px 0px #ffb8fb, -20px 20px 0px #ff71f3, -30px 30px 0px #ff00ea;
+    text-align: center;
+    background-color: rgb(255 184 251 / 0.51)
+}
+
+.navbar:hover {
+    box-shadow: none;
+}
+
+.navbar a {
+    color: #ff00ea;
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+    text-decoration: none;
+    padding: 10px 20px; /* Adjust the padding as needed */
+}
+
+.navbar a:hover {
+    color: #00e6e6;
+}
+
+.main {
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute; /* Add this to create a stacking context */
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    display: block;
+    bottom: 0;
+    border-top: 3px solid #ffb8fb;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(255 184 251 / 0.51)
+}
+
+.foot {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: #8600FF;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #00e6e6;
+    text-decoration: none;
+}
+
+/* My styles
+------------------------------------------------- */
+
+.bg_img {
+    background-color: black;
+    background-image: url('/images/grid.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.glitch-wrapper {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.glitch {
+    position: relative;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: 5px;
+    z-index: 1;
+}
+
+    .glitch:before,
+    .glitch:after {
+        display: block;
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+    }
+
+.glitch-active .glitch:before {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #FF8BEE;
+    z-index: -1;
+}
+
+.glitch-active .glitch:after {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #8600FF;
+    z-index: -2;
+}
+
+@keyframes glitch-color {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-3px, 3px);
+    }
+
+    40% {
+        transform: translate(-3px, -3px);
+    }
+
+    60% {
+        transform: translate(3px, 3px);
+    }
+
+    80% {
+        transform: translate(3px, -3px);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+.video_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.video {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto; /* This centers the video horizontally */
+    border: 3px solid #00e6e6;
+    transition: ease-in-out 0.5s;
+    box-shadow: -10px 10px 0px #00e6e6, -20px 20px 0px #01cccc, -30px 30px 0px #00bdbd;
+}
+
+.video:hover {
+    box-shadow: none;
+}
